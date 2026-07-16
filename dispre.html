@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防災シミュレーション</title>
+</head>
+
+<style>
+body{
+    font-family: "Yu Gothic", sans-serif;
+    background:#f4f8fb;
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    color:#005bac;
+}
+
+.choices{
+    margin-top:20px;
+}
+
+label{
+    display:block;
+    margin:10px 0;
+    font-size:18px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#0077cc;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+button:hover{
+    background:#005fa3;
+}
+
+.result{
+    margin-top:30px;
+    text-align:center;
+}
+
+#riskValue{
+    font-size:40px;
+    font-weight:bold;
+    margin:20px;
+}
+
+#grade{
+    font-size:28px;
+    font-weight:bold;
+}
+
+#message{
+    margin-top:20px;
+    font-size:18px;
+}
+    </style>
+
+<body>
+
+    <div class="container">
+
+        <h1>防災シミュレーション</h1>
+
+        <p>
+            実施している防災対策を選択してください。
+        </p>
+
+        <div class="choices">
+
+            <label>
+                <input type="checkbox" value="hazard">
+                ハザードマップの確認
+            </label>
+
+            <label>
+                <input type="checkbox" value="bag">
+                防災リュックの作成
+            </label>
+
+            <label>
+                <input type="checkbox" value="route">
+                避難ルートや避難場所の確認
+            </label>
+
+            <label>
+                <input type="checkbox" value="drill">
+                避難訓練の実施
+            </label>
+
+            <label>
+                <input type="checkbox" value="family">
+                家族との連絡方法の確認
+            </label>
+
+            <hr>
+
+            <label>
+                <input type="checkbox" value="food">
+                非常食・飲料水の備蓄
+            </label>
+
+            <label>
+                <input type="checkbox" value="furniture">
+                家具固定
+            </label>
+
+            <label>
+                <input type="checkbox" value="app">
+                防災アプリの導入
+            </label>
+
+            <label>
+                <input type="checkbox" value="community">
+                地域防災活動への参加
+            </label>
+
+        </div>
+
+        <button onclick="calculateRisk()">
+            シミュレーション開始
+        </button>
+
+        <div class="result">
+
+            <h2>結果</h2>
+
+            <div id="riskValue">
+                危険度：100
+            </div>
+
+            <div id="grade"></div>
+
+            <div id="message"></div>
+
+        </div>
+
+    </div>
+
+     <script src="script.js"></script>
+
+</body>
+
+</html>
